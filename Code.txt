@@ -1,0 +1,151 @@
+from tkinter import *
+from tkinter import ttk
+
+def close_all():
+    frame2.place_forget()
+    frame2st.place_forget()
+    frame2lis.place_forget()
+    frame2set.place_forget()
+    frame2dict.place_forget()
+
+def frst():
+    close_all()
+    frame2st.place(relx=0.15,relwidth = 0.35, relheight=1)
+
+def frlis():
+    close_all()
+    frame2lis.place(relx=0.15,relwidth = 0.35, relheight=1)
+
+def frset():
+    close_all()
+    frame2set.place(relx=0.15,relwidth = 0.35, relheight=1)
+
+def frdict():
+    close_all()
+    frame2dict.place(relx=0.15,relwidth = 0.35, relheight=1)
+
+def Knop_Soz(nameParent, textButt, Opred, Image, x, y,k):
+    def New_Inform():
+        #kart = PhotoImage(file=Immage),image=kart,
+        label["text"] = Opred
+        log = PhotoImage(file=Image)
+        log = log.subsample(k,k)
+        label.image = log
+        label["image"] = label.image
+        
+    btnm = Button(nameParent, text = textButt, command = New_Inform)
+    btnm.place(x=x, y=y, width=60, height=30)
+#  width=100, height=100, 
+glo = Tk()
+
+glo["bg"] = '#fafafa'
+glo.title("Главное окно")
+glo.geometry('1000x500')
+
+glo.resizable(width=False, height=False)
+frame2 = Frame(glo, bg='#E0FFFF')
+frame2.place(relx=0.15,relwidth = 0.35, relheight=1)
+
+frame3 = Frame(glo, bg='white')
+frame3.place(relx=0.5,relwidth = 0.5, relheight=1)
+
+frame1 = Frame(glo, bg="#AFEEEE")
+frame1.place(relwidth = 0.15, relheight=1)
+frame2st = Frame(glo, bg='#E0FFFF')
+frame2lis = Frame(glo, bg='#E0FFFF')
+frame2set = Frame(glo, bg='#E0FFFF')
+frame2dict = Frame(glo, bg='#E0FFFF')
+#МАКСИМУМ 56 СИМВОЛОВ В СТРОКЕ
+log = PhotoImage(file="./Zag.png")
+log = log.subsample(2,2)
+label = ttk.Label(frame3,image=log, text="",font=("Arial", 12), background="white",compound="bottom")
+label.pack()
+
+#создание методов для строк
+Knop_Soz(frame2st, "capitalize()", "Возвращает копию строки s, в которой первый символ\n имеет верхний регистр, а все остальные\n символы имеют нижний регистр.", "./capit.png", 22, 10,1)
+Knop_Soz(frame2st, "swapcase()", "Возвращает копию строки s, в которой все символы,\n имеющие верхний регистр, преобразуются в\n символы нижнего регистра и наоборот.", './swap.png', 104, 10,1)
+Knop_Soz(frame2st, "title()", "Возвращает копию строки s, в которой\n первый символ каждого слова переводится в верхний регистр.", './tit.png', 186, 10,1)
+Knop_Soz(frame2st, "lower()", "Возвращает копию строки s, в которой\n все символы имеют нижний регистр.", "./lower.png",268 , 10,1)
+
+Knop_Soz(frame2st, "upper()", "Возвращает копию строки s, в которой\n все символы имеют верхний регистр.", './upper.png', 22, 50,1)
+Knop_Soz(frame2st, "count()", "Считает количество непересекающихся\n вхождений подстроки <sub> в исходную строку s.", './count.png', 104, 50,1)
+Knop_Soz(frame2st, "startswith()", "Определяет, начинается ли\n исходная строка s подстрокой <suffix>.", './stsw.png', 186, 50,1)
+Knop_Soz(frame2st, "endswith()", "Определяет, оканчивается ли\n исходная строка s подстрокой <suffix>.", './ensw.png',268 , 50,1)
+
+Knop_Soz(frame2st, "find()", "Находит индекс первого вхождения подстроки\n <sub> в исходной строке s.", './find.png', 22, 90,1)
+Knop_Soz(frame2st, "rfind()", "Находит индекс первого вхождения подстроки\n <sub> в исходной строке s, начиная с конца строки s.", './rfind.png', 104, 90,1)
+Knop_Soz(frame2st, "index()", "Идентичен методу find(), за тем исключением,\n что он вызывает ошибкуво время выполнения программы,\n если подстрока <sub> не найдена.", './ind.png', 186, 90,1)
+Knop_Soz(frame2st, "rindex()", "Идентичен методу index(), за тем исключением, что он ищет первое\n вхождение подстроки <sub>, начиная с конца строки s.", './rind.png',268 , 90,1)
+
+Knop_Soz(frame2st, "strip()", "Возвращает копию строки s, у которой удалены\n все пробелы, стоящие в начале и конце строки.", './st.png', 22, 130,1)
+Knop_Soz(frame2st, "lstrip()", "Возвращает копию строки s, у которой удалены\n все пробелы, стоящие в начале строки.", './lst.png', 104, 130,1)
+Knop_Soz(frame2st, "rstrip()", "Возвращает копию строки s, у которой удалены\n все пробелы, стоящие в конце строки.", './rst.png', 186, 130,1)
+Knop_Soz(frame2st, "replace()", "Возвращает копию s со всеми вхождениями\n подстроки <old>, заменёнными на <new>, <count> раз от начала строки.", './repl.png',268 , 130,1)
+
+Knop_Soz(frame2st, "isalnum()", "Определяет, состоит ли исходная строка\n из буквенно-цифровых символов.", './num.png', 22, 170,1)
+Knop_Soz(frame2st, "isalpha()", "Определяет, состоит ли исходная строка\n из буквенных символов.", './alpha.png', 104, 170,1)
+Knop_Soz(frame2st, "isdigit()", "Определяет, состоит ли исходная строка\n только из цифровых символов.", './dig.png', 186, 170,1)
+Knop_Soz(frame2st, "islower()", "Определяет, являются ли все буквенные символы\n исходной строки строчными (имеют нижний регистр).", './islw.png',268 , 170,1)
+
+Knop_Soz(frame2st, "isupper()", "Определяет, являются ли все буквенные символы\n исходной строки заглавными (имеют верхний регистр).", './isup.png', 22, 210,1)
+Knop_Soz(frame2st, "isspace()", "Определяет, состоит ли исходная строка\n только из пробельных символов.", './isspace.png',104 , 210,1)
+Knop_Soz(frame2st, "split()", "Разбивает строку на слова, используя в\n качестве разделителя последовательность\n пробельных символов,\n и возвращает список из этих слов.", './spl.png', 186, 210,1)
+#создание методов для списков
+Knop_Soz(frame2lis, "append()", "Используется для добавления нового элемента\n в конец списка.", "./Zag.png", 22, 10,2)
+Knop_Soz(frame2lis, "extend()", "Используется для расширения списка элементами другого \nсписка или строки.", './Zag.png', 104, 10,2)
+Knop_Soz(frame2lis, "del", "Используется для удаления элементов списка по определенному индексу.\n Оператор del работает и со срезами: можно\n удалить целый диапазон элементов списка.", './Zag.png', 186, 10,2)
+Knop_Soz(frame2lis, "join()", "Собирает строку из элементов списка, используя в качестве разделителя строку, к которой применяется метод.", "./Zag.png",268 , 10,2)
+
+Knop_Soz(frame2lis, "insert()", "Позволяет вставлять значение в список в заданной позиции.", './Zag.png', 22, 50,1)
+Knop_Soz(frame2lis, "index()", "Возвращает индекс первого элемента, значение которого\n равняется переданному в метод значению.", './Zag.png', 104, 50,2)
+Knop_Soz(frame2lis, "remove()", "Удаляет первый элемент, значение которого равняется\n переданному в метод значению.", './Zag.png', 186, 50,2)
+Knop_Soz(frame2lis, "pop()", " Удаляет элемент по указанному индексу и возвращает его.", './Zag.png',268 , 50,1)
+
+Knop_Soz(frame2lis, "copy()", "Создаёт поверхностную копию списка.", './find.png', 22, 90,1)
+Knop_Soz(frame2lis, "count()", "Возвращает количество элементов в списке, значения\n которых равны переданному в метод значению. ", './Zag.png', 104, 90,2)
+Knop_Soz(frame2lis, "reverse()", "Инвертирует порядок следования значений в списке,\n то есть меняет его на противоположный.", './Zag.png', 186, 90,2)
+Knop_Soz(frame2lis, "clear()", "Удаляет все элементы из списка.", './Zag.png',268 , 90,1)
+
+Knop_Soz(frame2lis, "sort()", "Сортирует элементы списка по возрастанию\n или убыванию.(reverse = True)", './Zag.png', 22, 90,2)
+#создание методов для множеств
+Knop_Soz(frame2set, "add()", "Используется для добавления нового элемента в множество.", "./Zag.png", 22, 10,1)
+Knop_Soz(frame2set, "remove()", "Удаляет элемент из множества с генерацией исключения\n (ошибки) в случае, если такого элемента нет.", './Zag.png', 104, 10,2)
+Knop_Soz(frame2set, "discard()", "Удаляет элемент из множества без генерации исключения\n (ошибки), если элемент отсутствует.", './Zag.png', 186, 10,2)
+Knop_Soz(frame2set, "pop()", "Удаляет и возвращает случайный элемент из множества с генерацией\n исключения (ошибки) при попытке удаления из пустого множества.", "./Zag.png",268 , 10,2)
+
+Knop_Soz(frame2set, "clear()", "Удаляет все элементы из множества.", './Zag.png', 22, 50,2)
+Knop_Soz(frame2set, "union()", "Для объединения(или) двух множеств.\n(также используется:|)", './Zag.png', 104, 50,2)
+Knop_Soz(frame2set, "intersection()", "Для пересечения(и) двух множеств.\n(также используется:&).", './Zag.png', 186, 50,2)
+Knop_Soz(frame2set, "difference()", "Для разности(A и не B) двух множеств.\n(также используется:-)", './Zag.png',268 , 50,2)
+
+Knop_Soz(frame2set, "symmetric_difference()", "Для симметрической разности(A или B и не(A и B))\nдвух множеств.(также используется:^)", './Zag.png', 22, 90,2)
+Knop_Soz(frame2set, "_update()", "Изменяет исходное множество.\n(|=, &=, -=, ^=)", './find.png', 104, 90,2)
+Knop_Soz(frame2set, "issubset()", "Используется для определения, является ли одно\n из множеств подмножеством другого.", './Zag.png', 186, 90,2)
+Knop_Soz(frame2set, "issuperset()", "Используется для определения, является ли одно\n из множеств надмножеством другого.", './Zag.png',268 , 90,2)
+
+Knop_Soz(frame2set, "isdisjoint()", "Используется для определения отсутствия\n общих элементов в множествах.", './Zag.png', 22, 130,2)
+#создание методов для словарей
+Knop_Soz(frame2dict, "get()", "Возвращает значение по ключу или значение по умолчанию,\n если ключ не найден", "./Zag.png", 22, 10,2)
+Knop_Soz(frame2dict, "update()", "Объединяет ключи и значения одного словаря с\n ключами и значениями другого.", './Zag.png', 104, 10,2)
+Knop_Soz(frame2dict, "setdefault()", "Позволяет получить значение из словаря по\n заданному ключу, автоматически добавляя элемент словаря, если он отсутствует", './Zag.png', 186, 10,2)
+Knop_Soz(frame2dict, "del", "Удаляет из словаря элемент по заданному ключу вместе\n с его значением", "./Zag.png",268 , 10,2)
+
+Knop_Soz(frame2dict, "pop()", " Удаляет элемент по ключу и возвращает его значение.", './upper.png', 22, 50,2)
+Knop_Soz(frame2dict, "popitem()", "Удаляет из словаря последний добавленный элемент\n и возвращает удаляемый элемент\n в виде кортежа (ключ, значение)", './Zag.png', 104, 50,2)
+Knop_Soz(frame2dict, "clear()", "Удаляет все элементы из словаря.", './Zag.png', 186, 50,2)
+Knop_Soz(frame2dict, "copy()", "Создает поверхностную копию словаря.", './Zag.png',268 , 50,2)
+
+Knop_Soz(frame2dict, "keys()", "Возвращает список ключей всех элементов словаря.", './Zag.png', 22, 90,2)
+Knop_Soz(frame2dict, "values()", "Возвращает список значений всех элементов словаря.", './Zag.png', 104, 90,2)
+Knop_Soz(frame2dict, "items()", "Возвращает список всех элементов словаря,\n состоящий из кортежей пар (ключ, значение).", './Zag.png', 186, 90,2)
+
+btnst = Button(frame1, text = "str()", command = frst)
+btnst.place(x=20, y=15, width=110, height=50)
+btnlis = Button(frame1, text = "list()", command = frlis)
+btnlis.place(x=20, y=80, width=110, height=50)
+btnset = Button(frame1, text = "set()", command = frset)
+btnset.place(x=20, y=145, width=110, height=50)
+btndict = Button(frame1, text = "dict()", command = frdict)
+btndict.place(x=20, y=210, width=110, height=50)
+
+glo.mainloop()
